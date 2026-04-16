@@ -13,6 +13,7 @@ I want to become a professional .NET Developer. I am interested in backend devel
 
 ### Code Example
 C# Web API Controller:
+
 ```csharp
 [HttpGet("{id}")]
 public ActionResult<string> GetUserInfo(int id) {
