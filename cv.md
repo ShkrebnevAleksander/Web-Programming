@@ -12,12 +12,14 @@ I want to become a professional .NET Developer. I am interested in backend devel
 * Git, Docker
 
 ### Code Example
+
 C# Web API Controller:
 
-```csharp
+<pre><code>
 [HttpGet("{id}")]
-public ActionResult<string> GetUserInfo(int id) {
+public ActionResult GetUserInfo(int id) 
+{
     var user = _userService.GetById(id);
     return Ok(user.Name);
 }
-```
+</code></pre>
