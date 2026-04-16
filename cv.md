@@ -20,3 +20,4 @@ public ActionResult<string> GetUserInfo(int id) {
     var user = _userService.GetById(id);
     return Ok(user.Name);
 }
+```
