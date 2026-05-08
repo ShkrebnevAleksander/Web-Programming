@@ -1,0 +1,220 @@
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES
+   Sourced from Figma tokens; all px values converted to rem
+   (base: 1rem = 16px)
+   ============================================================ */
+:root {
+  /* Colors */
+  --color-bg:          #fffaf5;   /* floralwhite */
+  --color-text:        #1a1a1a;   /* gray-100 */
+  --color-text-muted:  #4a4a4a;   /* gray-100 fallback for links */
+  --color-orange:      #e8612a;   /* primary CTA */
+  --color-orange-dark: #c94e1f;   /* hover state */
+  --color-divider:     #e0dcd7;   /* gray-200 */
+
+  /* Typography */
+  --font-roboto: 'Roboto', sans-serif;
+
+  /* Nav links: 14px → 0.875rem */
+  --fs-nav:     0.875rem;
+  --lh-nav:     1.625rem;   /* 26px → 1.625rem */
+  --ls-nav:     0.0875rem;  /* 1.4px */
+
+  /* Auth buttons: 13px → 0.8125rem */
+  --fs-btn:     0.8125rem;
+  --ls-btn:     0.08125rem; /* 1.3px */
+
+  /* Layout */
+  --container-max:     90rem;    /* 1440px */
+  --container-padding: 1.875rem; /* 30px */
+  --header-pt:         1rem;     /* 16px */
+  --header-pb:         0.875rem; /* 14px */
+  --gap-nav:           1.25rem;  /* 20px */
+  --gap-auth:          1.25rem;  /* 20px */
+  --gap-logo-nav:      2.5rem;   /* 40px */
+}
+
+/* ============================================================
+   BODY
+   ============================================================ */
+body {
+  font-family: var(--font-roboto);
+  font-size: var(--fs-nav);
+  color: var(--color-text);
+  background-color: white; /* Это бежевый фон */
+  line-height: normal;
+  -webkit-font-smoothing: antialiased;
+
+  /* ДОБАВЛЯЕМ ЖЕСТКОЕ ОГРАНИЧЕНИЕ: */
+  max-width: 1440px; /* Сайт не будет шире макета */
+  margin: 0 auto;    /* Центрируем сайт на больших мониторах */
+  position: relative; /* Для страховки */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Легкая тень по краям, чтобы видеть границы сайта */
+}
+
+/* ============================================================
+   HEADER  (block)
+   ============================================================ */
+.header {
+  background-color: #faf6ed; /* Хедер просто прозрачный, через него видно бежевый фон body */
+  width: 100%;
+  height: 60px; /* Поставь точную высоту из Figma */
+  overflow: hidden;
+}
+
+/* ============================================================
+   HEADER__CONTAINER  (element)
+   Global 1440px wrapper — ВСEGДА используется для контента
+   ============================================================ */
+.header__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--header-pt) var(--container-padding) var(--header-pb);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap-logo-nav);
+}
+
+/* ============================================================
+   HEADER__LOGO  (element)
+   ============================================================ */
+.header__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.header__logo-img {
+  /* Pixel-perfect: 90×28px as in Figma */
+  width: 5.625rem;   /* 90px */
+  height: 1.75rem;   /* 28px */
+  object-fit: contain;
+  display: block;
+}
+
+/* ============================================================
+   HEADER__NAV  (element)
+   ============================================================ */
+.header__nav {
+  flex: 1;
+  min-width: 0; /* prevents flex blowout */
+}
+
+/* ============================================================
+   NAV__LIST  (block)
+   ============================================================ */
+.nav__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-nav);
+  flex-wrap: nowrap;
+}
+
+/* ============================================================
+   NAV__ITEM  (element)
+   ============================================================ */
+.nav__item {
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   NAV__LINK  (element)
+   ============================================================ */
+.nav__link {
+  font-family: var(--font-roboto);
+  font-size: var(--fs-nav);
+  font-weight: 400;
+  line-height: var(--lh-nav);
+  letter-spacing: var(--ls-nav);
+  text-transform: uppercase;
+  color: var(--color-text);
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+  color: var(--color-orange);
+}
+
+/* ============================================================
+   HEADER__AUTH  (element)
+   ============================================================ */
+.header__auth {
+  Width: 187px;
+  height: 60;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-auth);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   BTN  (block)
+   ============================================================ */
+.btn {
+  font-family: var(--font-roboto);
+  font-size: var(--fs-btn);
+  font-weight: 400;
+  line-height: var(--lh-nav);
+  letter-spacing: var(--ls-btn);
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+/* BTN--PRIMARY  (modifier) — "Get Started" */
+.btn--primary {
+  color: var(--color-orange);
+}
+
+.btn--primary:hover {
+  color: var(--color-orange-dark);
+}
+
+/* BTN--SECONDARY  (modifier) — "Sign In" */
+.btn--secondary {
+  color: var(--color-text);
+}
+
+.btn--secondary:hover {
+  color: var(--color-orange);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Collapse nav at tablet breakpoint */
+@media screen and (max-width: 55.3125rem) { /* 885px */
+  .header__nav {
+    display: none;
+  }
+}
+
+/* Tighten logo-to-auth gap at small breakpoint */
+@media screen and (max-width: 43.625rem) { /* 698px */
+  .header__container {
+    gap: var(--gap-nav); /* 20px instead of 40px */
+  }
+}
