@@ -350,3 +350,39 @@ body {
   background-color: #01152f;
   color: #faf6ed;
 }
+/* ============================================================
+   TAGLINE
+   ============================================================ */
+.tagline {
+  width: 100%;
+  background-color: #fcf9f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6.9rem 23.3rem 6.7rem;   
+  box-sizing: border-box;
+  border-bottom: 1px solid #01152f;
+}
+ 
+.tagline__text {
+  width: 100%;
+  max-width: 91.1rem;        
+  font-family: var(--font-roboto);
+  font-weight: 400;
+  font-size: 5.1rem;         
+  line-height: 5.98rem;      
+  letter-spacing: 0;
+  color: #01152f;
+  text-align: center;
+}
+ 
+.tagline__normal {
+  font-weight: 400;
+  font-style: normal;
+}
+ 
+.tagline__italic {
+  font-weight: 400;
+  font-style: italic;
+}
+ 
