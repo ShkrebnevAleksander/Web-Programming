@@ -225,3 +225,33 @@ body {
   background-color: var(--color-orange-dark);
 }
 
+/* ============================================================
+   BADGES
+   ============================================================ */
+.badges {
+  width: 100%;
+  background-color: #01152f;
+  padding: 1.7rem 7.7rem 1.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.badges__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.badges__item {
+  font-family: var(--font-roboto);
+  font-size: 1.6rem;  
+  font-weight: 400;
+  line-height: 2.5rem;   
+  letter-spacing: 0.1rem; 
+  color: #fcf9f2;
+  text-align: center;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+
