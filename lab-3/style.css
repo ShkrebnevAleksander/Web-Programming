@@ -386,3 +386,121 @@ body {
   font-style: italic;
 }
  
+/* ============================================================
+   ROUTINES — карточки продуктов
+   ============================================================ */
+.routines {
+  width: 100%;
+  background-color: #fcf9f2;
+}
+ 
+.routines__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.2rem;            
+  padding: 12.7rem 28.4rem; 
+  box-sizing: border-box;
+}
+
+.routines__heading {
+  font-family: var(--font-roboto);
+  font-size: 5.1rem;
+  font-weight: 400;
+  line-height: 5.98rem;
+  letter-spacing: 0;
+  color: #05142d;
+  text-align: center;
+  align-self: stretch;
+}
+
+.routines__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30.9rem;         
+  height: 4.7rem;          
+  padding: 1.4rem 4rem 1.3rem;
+  background-color: #e38c00;
+  border-radius: 3rem;
+  font-family: var(--font-roboto);
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.14rem;
+  line-height: 2rem;
+  text-transform: uppercase;
+  color: #01152f;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  box-sizing: border-box;
+  transition: filter 0.3s ease;
+}
+ 
+.routines__cta:hover {
+  filter: brightness(0.95);
+}
+ 
+.routines__grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 6rem 11rem;        
+  align-self: stretch;
+  width: 100%;
+}
+ 
+.routine-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 35rem;            
+}
+ 
+.routine-card--gap-20 { gap: 2rem; }  
+.routine-card--gap-26 { gap: 2.6rem; }
+.routine-card__img {
+  width: 100%;
+  height: 43.9rem;        
+  object-fit: cover;
+  display: block;
+  align-self: stretch;
+}
+
+.routine-card__title {
+  font-family: var(--font-roboto);
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 3.6rem;
+  letter-spacing: 0;
+  color: #05142d;
+  align-self: stretch;
+}
+
+.routine-card__subtitle {
+  font-family: var(--font-roboto);
+  font-size: 2.3rem;
+  font-weight: 400;
+  line-height: 2.8rem;
+  letter-spacing: 0;
+  color: #05142d;
+  align-self: stretch;
+}
+ 
+.routine-card__subtitle--sm {
+  font-size: 2.2rem;
+}
+ 
+.routine-card__text {
+  font-family: var(--font-roboto);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 3rem;
+  letter-spacing: 0;
+  color: #01152f;
+  align-self: stretch;
+}
+ 
+.routine-card__text--sm {
+  font-size: 1.7rem;
+}
